@@ -43,11 +43,13 @@ public class CatGenerator : MonoBehaviour
         int isFish = Random.Range(0, fishChance);
         if (isFish == 1)
         {
+            //spawn a fish
             nextCat = fish;
             nextCatImage.sprite = fishSprite;
         }
         else
         {
+            //spawn regular cat
             int nextCatIndex = Random.Range(0, highestCatSpawnIndex);
             nextCat = Cats[nextCatIndex];
             nextCatImage.sprite = catImages[nextCatIndex];
