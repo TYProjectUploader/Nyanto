@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class UniversalButtons : MonoBehaviour
 {
+    //methods for the other buttons
     public void ReloadScene()
     {
         AudioManager.instance.PlaySFX(AudioManager.instance.SFXButtonClick);

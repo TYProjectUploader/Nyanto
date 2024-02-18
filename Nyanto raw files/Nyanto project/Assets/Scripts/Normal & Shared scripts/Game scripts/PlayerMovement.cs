@@ -49,10 +49,10 @@ public class PlayerMovement : MonoBehaviour
         if (!GameManager.instance.gameOver && !PauseRelatedButtons.instance.Paused)
         {
             updateMovement();
-            catDropStatus();
+            CatDropStatus();
         }
     }
-    void catDropStatus() //check if player dropped cat and can drop cat (determined by collderinformer when cat has made first contact)
+    void CatDropStatus() //check if player dropped cat and can drop cat (determined by collderinformer when cat has made first contact)
     {
         if (canDrop && coolDownOver)
         {
@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
                 aimLine.SetActive(false); //turn off aim line while cat is dropping
                 canDrop = false;
                 coolDownOver = false;
-                CatGenerator.instance.simulateCurrentCat(); //simulate the current cat being held to make it drop
+                CatGenerator.instance.SimulateCurrentCat(); //simulate the current cat being held to make it drop
                 StartCoroutine(ResetDropCoolDown());
             }
         }

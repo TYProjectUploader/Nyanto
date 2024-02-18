@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class PauseRelatedButtons : MonoBehaviour
+//buttons for the pause menu
 {
     public static PauseRelatedButtons instance;
     [SerializeField] private GameObject pauseScreen;

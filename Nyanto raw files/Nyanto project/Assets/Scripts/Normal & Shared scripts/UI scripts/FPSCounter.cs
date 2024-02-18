@@ -6,21 +6,20 @@ using UnityEngine;
 public class FPSCounter : MonoBehaviour //simple script to display the fps
 {
     [SerializeField] private TextMeshProUGUI fpsCounter;
-    private float time;
+    private float timeSinceLastUpdate;
     private float pollingTime = 1f;
     private int frameCount;
     // Update is called once per frame
     void Update()
     {
         frameCount ++;
-        time += Time.unscaledDeltaTime;
+        timeSinceLastUpdate += Time.unscaledDeltaTime;
 
-
-        if(time >= pollingTime)
+        if(timeSinceLastUpdate >= pollingTime)
         {
-            int frameRate = Mathf.RoundToInt(frameCount/time);
+            int frameRate = Mathf.RoundToInt(frameCount/timeSinceLastUpdate);
             fpsCounter.text = frameRate.ToString() + " FPS";
-            time -= pollingTime;
+            timeSinceLastUpdate -= pollingTime;
             frameCount = 0;
         }
 

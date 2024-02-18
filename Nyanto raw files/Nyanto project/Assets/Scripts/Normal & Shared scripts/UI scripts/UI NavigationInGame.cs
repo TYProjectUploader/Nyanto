@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using System.Runtime.ExceptionServices;
 
 public class UINavigationInGame : MonoBehaviour
-//UI navigation with anything other than mouse
+//UI navigation with anything other than mouse within a game mode
 {
     [Header("---Input actions---")]
     [SerializeField] private InputActionReference cursorMovementDelta;

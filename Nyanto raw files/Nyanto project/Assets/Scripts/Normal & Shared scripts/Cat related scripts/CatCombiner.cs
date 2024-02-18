@@ -8,21 +8,21 @@ public class CatCombiner : MonoBehaviour //handles sending calls to combination 
 {
     //cat info for combination manager
     private CatInfo thisCatInfo;
-    private int thisCatIndex {get; set;}
+    private int ThisCatIndex {get; set;}
     void Awake()
     {
         //get stats of cat the script is attached to
         thisCatInfo = GetComponent<CatInfo>();
-        thisCatIndex = thisCatInfo.catIndex;
+        ThisCatIndex = thisCatInfo.catIndex;
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
         //check if collided with a cat and if not already handling a collision
         if (collision.gameObject.CompareTag("Cat") && !CombinationManager.instance.handlingCombine)
         {
-            int otherCatIndex = collision.gameObject.GetComponent<CatCombiner>().thisCatIndex;
+            int otherCatIndex = collision.gameObject.GetComponent<CatCombiner>().ThisCatIndex;
 
-            if (otherCatIndex == thisCatIndex) //only call handle collision if both are the same to reduce load
+            if (otherCatIndex == ThisCatIndex) //only call handle collision if both are the same to reduce load
             {
                 //use a singleton to handle the collision incase of multi-collisions, see Combinationmanager script for logic
                 CombinationManager.instance.HandleCollision(gameObject);
@@ -35,9 +35,9 @@ public class CatCombiner : MonoBehaviour //handles sending calls to combination 
         //check if collided with a cat and if not already handling a collision
         if (collision.gameObject.CompareTag("Cat") && !CombinationManager.instance.handlingCombine)
         {
-            int otherCatIndex = collision.gameObject.GetComponent<CatCombiner>().thisCatIndex;
+            int otherCatIndex = collision.gameObject.GetComponent<CatCombiner>().ThisCatIndex;
 
-            if (otherCatIndex == thisCatIndex) //only call handle collision if both are the same to reduce load
+            if (otherCatIndex == ThisCatIndex) //only call handle collision if both are the same to reduce load
             {
                 //use a singleton to handle the collision incase of multi-collisions, see Combinationmanager script for logic
                 CombinationManager.instance.HandleCollision(gameObject);

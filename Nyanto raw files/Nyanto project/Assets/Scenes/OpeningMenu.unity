@@ -4250,10 +4250,6 @@ MonoBehaviour:
   gameModeDefault: {fileID: 309461832}
   settingsDefault: {fileID: 413090635}
   creditsDefault: {fileID: 1797599728}
-  BgElements:
-  - {fileID: 385753637}
-  - {fileID: 132449315}
-  - {fileID: 148646345}
   rightTutorialButton: {fileID: 431516737}
   leftTutorialButton: {fileID: 2126872994}
   exitTutorialButton: {fileID: 1531051319}

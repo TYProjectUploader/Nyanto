@@ -31,7 +31,7 @@ public class GameOverDetector : MonoBehaviour
             if (timer > timeTillGameOver)
             {
                 GameManager.instance.GameOver();
-                StartCoroutine(flashGameOverCat(collider.gameObject));
+                StartCoroutine(FlashGameOverCat(collider.gameObject));
                 Debug.Log("gameover");
             }
         }
@@ -42,7 +42,7 @@ public class GameOverDetector : MonoBehaviour
         timer = 0f;
         //Debug.Log("exited");
     }
-    public static IEnumerator flashGameOverCat(GameObject cat)
+    public static IEnumerator FlashGameOverCat(GameObject cat)
     {
         SpriteRenderer sprite = cat.GetComponent<SpriteRenderer>();
         for (int i = 0; i < numberOfFlashes; i++)
