@@ -103,22 +103,21 @@ public class CombinationManager : MonoBehaviour
 
             // Reset combo count after a certain time
             Invoke("ResetCombo", comboResetTime);
-
+            //add score based on combocount
+            scoreToAdd = cat1Value*comboCount;
+            Score += scoreToAdd;
+            scoreText.text = Score.ToString();
             //Display combo
             if (comboCount > 1)
             {
                 combo.SetActive(true);
                 comboText.text = comboCount.ToString() + "X";
             }
+            
         }
         Debug.Log("clearing stored cats");
-
-        //add score based on combocount
-        scoreToAdd = cat1Value*comboCount;
-        Score += scoreToAdd;
         cat1 = null;
         cat2 = null;
-        scoreText.text = Score.ToString();
     }
 
     private IEnumerator CombineCats(GameObject cat1, GameObject cat2)

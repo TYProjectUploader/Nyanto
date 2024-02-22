@@ -111,15 +111,14 @@ public class BouncyCombinationManager : MonoBehaviour
                 combo.SetActive(true);
                 comboText.text = comboCount.ToString() + "X";
             }
+            //add score based on combocount
+            scoreToAdd = cat1Value*comboCount;
+            Score += scoreToAdd;
+            scoreText.text = Score.ToString();
         }
         Debug.Log("clearing stored cats");
-
-        //add score based on combocount
-        scoreToAdd = cat1Value*comboCount;
-        Score += scoreToAdd;
         cat1 = null;
         cat2 = null;
-        scoreText.text = Score.ToString();
     }
 
     private IEnumerator CombineCats(GameObject cat1, GameObject cat2)
