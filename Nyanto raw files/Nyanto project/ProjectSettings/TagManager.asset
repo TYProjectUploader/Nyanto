@@ -17,7 +17,7 @@ TagManager:
   - Lose Boundary
   - Movement
   - Cat
-  - 
+  - Explosion
   - 
   - 
   - 
@@ -42,4 +42,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Explosion
+    uniqueID: 359352169
     locked: 0

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BouncyMode.unity
     guid: 31796e31ce86b97499a930acd470eaa7
+  - enabled: 1
+    path: Assets/Scenes/ExplosiveModeWarning.unity
+    guid: 8ed153ec69a4ecb4aba482f97d8860a8
   m_configObjects: {}

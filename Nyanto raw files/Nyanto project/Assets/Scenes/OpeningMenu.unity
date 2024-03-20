@@ -4904,7 +4904,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ART:                                   Tim
+  m_text: 'CATs:                                 Tim
 
     Game Dev:                        
     Tim'
@@ -6729,12 +6729,12 @@ MonoBehaviour:
     with the amount of bugs they found.
 
 
-    The Artists of the UI icons, music
-    and sfx (credited in documentation)
+    The Artists of the UI icons, music,
+    sfx and vfx (credited in documentation)
 
 
-    Everyone that I had playtest this game
-    for me during its various stages.'
+    Everyone that I had playtest this
+    game for me during its various stages.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7e82f7510fc3cca42ba7af3b9859f69b, type: 2}
   m_sharedMaterial: {fileID: -8334834339662953052, guid: 7e82f7510fc3cca42ba7af3b9859f69b, type: 2}

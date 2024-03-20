@@ -22,7 +22,7 @@ public class LoadGameMode : MonoBehaviour
     {
         ResetCurrentPage();
         //reload current scene
-        SceneManager.LoadScene("ExplosiveMode");
+        SceneManager.LoadScene("ExplosiveModeWarning");
     }
 
     private void ResetCurrentPage()

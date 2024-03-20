@@ -5,6 +5,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System;
+using Unity.Mathematics;
 
 public class ExplosiveCombinationManager : MonoBehaviour
 {
@@ -28,8 +29,11 @@ public class ExplosiveCombinationManager : MonoBehaviour
     //variables for handling the combination
     private float combineDelay = 0.02f;
     private float repulsionForce = 35.5f; //force to push other cats in range away when spawning large in explosive mode
+    private float explosionAnimMagnitude = 0.2f; //size of explosion fx
     private float explosionRadiusMultiplier = 1.8f;
     [SerializeField] private Material whiteMaterial; //material to swap the cat sprites out for
+    [SerializeField] private GameObject explosionPrefab;
+    [SerializeField] private CameraShake cameraShakeScript;
 
     //spawn boundary variables for combined cats
     private BoxCollider2D spawnBox;
@@ -132,11 +136,13 @@ public class ExplosiveCombinationManager : MonoBehaviour
         //Destroy collided objects only occurs after rest of frame logic is done
         Destroy(cat1);
         Destroy(cat2);
+
         AudioManager.instance.PlaySFX(AudioManager.instance.SFXCombine);
         //check if its the largest cat in the list in case of future extensions 
         if (cat1Index == ExplosiveCatGenerator.instance.Cats.Length -1)
         {
             Debug.Log("Watermelon combine!!!");
+            //explosion not considered here just because no matter what that would definitely trigger game over and i don't think is possible
         }
         else
         {
@@ -162,6 +168,14 @@ public class ExplosiveCombinationManager : MonoBehaviour
             combinedCat.transform.position = collisionPosition;
             ExplosiveColliderInformer informer = combinedCat.GetComponent<ExplosiveColliderInformer>();
             informer.triggeredFromCatCombine = true;
+
+            //explosion fx
+            GameObject explosionInstance = Instantiate(explosionPrefab, collisionPosition, quaternion.identity);
+            float explosionmag = (cat1Index+1)*explosionAnimMagnitude;
+            explosionInstance.transform.localScale = new Vector3(explosionmag, explosionmag, 1f);
+            cameraShakeScript.Shake(cat1Index);
+            // Automatically destroy the explosion after the specified duration
+            Destroy(explosionInstance, 1f);
 
             //To reduce overlap when spawning all overlapping colliders have their rigidbody receive a force away from each other
             Collider2D[] colliders = Physics2D.OverlapCircleAll(collisionPosition, catWidth*explosionRadiusMultiplier);
