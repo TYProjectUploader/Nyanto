@@ -23,3 +23,6 @@ Various 'Nya' sounds: https://pixabay.com/sound-effects/anime-cat-girl-6731/
 Button click: https://pixabay.com/sound-effects/tap-notification-180637/
 
 Music: https://pixabay.com/music/cartoons-cute-creatures-150622/
+
+Explosion VFX:
+https://assetstore.unity.com/packages/2d/textures-materials/2d-flat-explosion-66932
