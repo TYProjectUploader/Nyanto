@@ -3,7 +3,7 @@ Game created for SDD Major (currently only built for Windows but you may build y
 
 This project was created using Unity version 2022.3.0f1 by Timothy Yang. 
 
-How to just play the game:
+**How to just play the game:**
 1. Go to releases and click the latest version 
 2. Click to download the first file under assets named NyantoWinBuild.zip
 3. Extract files from the zip folder and click the Nyanto exe to play
@@ -16,7 +16,7 @@ Assets that are not mine can be downloaded from below everything else was made m
 
 icons: https://juliocacko.itch.io/free-input-prompts
 
-SFX:
+**SFX:**
 
 Various 'Nya' sounds: https://pixabay.com/sound-effects/anime-cat-girl-6731/
 
@@ -24,5 +24,6 @@ Button click: https://pixabay.com/sound-effects/tap-notification-180637/
 
 Music: https://pixabay.com/music/cartoons-cute-creatures-150622/
 
-Explosion VFX:
-https://assetstore.unity.com/packages/2d/textures-materials/2d-flat-explosion-66932
+**VFX:**
+
+Explosion: https://assetstore.unity.com/packages/2d/textures-materials/2d-flat-explosion-66932
