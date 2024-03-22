@@ -24,6 +24,7 @@ public class UniversalButtons : MonoBehaviour
     
     public void QuitGame()
     {
+        PlayerPrefs.SetInt("WarningGiven",0); //reset warning given from explosive mode given
         Application.Quit();
     }
 }

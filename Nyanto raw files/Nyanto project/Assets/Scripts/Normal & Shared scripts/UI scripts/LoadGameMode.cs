@@ -3,26 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class LoadGameMode : MonoBehaviour
 {
     public void NormalModeSelect()
     {
         ResetCurrentPage();
-        //reload current scene
         SceneManager.LoadScene("NormalMode");
     }
     public void BouncyModeSelect()
     {
         ResetCurrentPage();
-        //reload current scene
         SceneManager.LoadScene("BouncyMode");
     }
     public void ExplosiveModeSelect()
     {
         ResetCurrentPage();
-        //reload current scene
-        SceneManager.LoadScene("ExplosiveModeWarning");
+        if(PlayerPrefs.GetInt("WarningGiven",0) == 0)
+        {
+            //set warninggiven as true using 1 as a placeholder for true boolean, reset when game is closed.
+            PlayerPrefs.SetInt("WarningGiven",1); 
+            SceneManager.LoadScene("ExplosiveModeWarning");
+        }
+        else{ //skip warning if already played before
+            SceneManager.LoadScene("ExplosiveMode");
+        }
     }
 
     private void ResetCurrentPage()
