@@ -6,6 +6,10 @@ using UnityEngine.EventSystems;
 
 public class UniversalButtons : MonoBehaviour
 {
+    void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("WarningGiven",0); //reset warning given from explosive mode when game is quit from any way
+    }
     //methods for the other buttons
     public void ReloadScene()
     {
@@ -24,7 +28,6 @@ public class UniversalButtons : MonoBehaviour
     
     public void QuitGame()
     {
-        PlayerPrefs.SetInt("WarningGiven",0); //reset warning given from explosive mode given
         Application.Quit();
     }
 }
