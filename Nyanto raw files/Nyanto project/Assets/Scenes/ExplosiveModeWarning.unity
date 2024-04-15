@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 407019384}
   - component: {fileID: 407019387}
   m_Layer: 5
-  m_Name: Epilepsy warning
+  m_Name: Motion warning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -230,9 +230,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "THIS GAMEMODE CONTAINS A LOT OF SCREEN-SHAKING AND FLASHING LIGHTS WHICH
-    MAY NOT BE SAFE FOR PEOPLE WITH PHOTOSENSITIVE EPILEPSY. \n\nPLAYER DISCRETION
-    IS ADVISED."
+  m_text: "THIS GAMEMODE CONTAINS A LOT OF SCREEN-SHAKING, MAY NOT BE SAFE FOR PEOPLE
+    SENSITIVE TO MOTION SICKNESS. \n\nPLAYER DISCRETION IS ADVISED."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db087282c5cd4f047a8784c4f89d7d91, type: 2}
   m_sharedMaterial: {fileID: -8334834339662953052, guid: db087282c5cd4f047a8784c4f89d7d91, type: 2}
@@ -295,7 +294,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -177.3144, y: 0, z: -173.1908, w: -92.09353}
+  m_margin: {x: -134.17671, y: 0, z: -129.42078, w: -92.09353}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -326,8 +325,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 42.999996, y: 0}
+  m_SizeDelta: {x: 412.89, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &407019387
 Animator:
@@ -427,8 +426,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506483264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.37, y: 2.58, z: 0}
-  m_LocalScale: {x: 0.492, y: 0.24973921, z: 0.492}
+  m_LocalPosition: {x: -5.6337, y: 2.7118, z: 0}
+  m_LocalScale: {x: 0.45195124, y: 0.22906081, z: 0.492}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -476,7 +475,7 @@ MonoBehaviour:
   m_text: 'Also....
 
     The lower your PC specs, the more likely things break in
-    this game mode :P'
+    this game mode coz unity :P'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db087282c5cd4f047a8784c4f89d7d91, type: 2}
   m_sharedMaterial: {fileID: -8334834339662953052, guid: db087282c5cd4f047a8784c4f89d7d91, type: 2}
@@ -539,7 +538,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -96.41175, w: 0}
+  m_margin: {x: -127.33109, y: 0, z: -221.75333, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
