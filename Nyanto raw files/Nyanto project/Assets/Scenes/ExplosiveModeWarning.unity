@@ -231,7 +231,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "THIS GAMEMODE CONTAINS A LOT OF SCREEN-SHAKING, MAY NOT BE SAFE FOR PEOPLE
-    SENSITIVE TO MOTION SICKNESS. \n\nPLAYER DISCRETION IS ADVISED."
+    SENSITIVE TO MOTION SICKNESS OR EPILEPSY. \n\nPLAYER DISCRETION IS ADVISED."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db087282c5cd4f047a8784c4f89d7d91, type: 2}
   m_sharedMaterial: {fileID: -8334834339662953052, guid: db087282c5cd4f047a8784c4f89d7d91, type: 2}
@@ -475,7 +475,9 @@ MonoBehaviour:
   m_text: 'Also....
 
     The lower your PC specs, the more likely things break in
-    this game mode coz unity :P'
+    this game mode coz unity :P
+
+    P.s. don''t worry bout the bombs....'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db087282c5cd4f047a8784c4f89d7d91, type: 2}
   m_sharedMaterial: {fileID: -8334834339662953052, guid: db087282c5cd4f047a8784c4f89d7d91, type: 2}
@@ -569,7 +571,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2}
+  m_AnchoredPosition: {x: -39, y: 1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1128986234

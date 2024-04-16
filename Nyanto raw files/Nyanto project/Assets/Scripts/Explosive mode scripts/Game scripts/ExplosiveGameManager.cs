@@ -44,13 +44,13 @@ public class ExplosiveGameManager : MonoBehaviour
     void DisableCatPhysics()
     {
         // Find all cats by finding all Rigidbody components in the scene
-        GameObject[] allCatRigidbodies = GameObject.FindGameObjectsWithTag("Cat");
+        Rigidbody2D[] allRigidbodies = FindObjectsOfType<Rigidbody2D>();
         Debug.Log("Freezing all cats state");
+
         // Iterate through each Rigidbody and disable physics simulation to ensure screenshot is what is expected instead of 
-        foreach (GameObject rb in allCatRigidbodies)
+        foreach (Rigidbody2D rb in allRigidbodies)
         {
-            Rigidbody2D catRigidBody = rb.GetComponent<Rigidbody2D>();
-            catRigidBody.simulated = false;
+            rb.simulated = false;
         }
     }
 

@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip SFXCombine;
     public AudioClip SFXGameOver;
     public AudioClip SFXFishNya;
+    public AudioClip SFXMegumin; //EXPLOSION
     public AudioClip SFXButtonClick;
 
     public static AudioManager instance;

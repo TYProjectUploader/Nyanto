@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
+    public static CameraShake instance;
     private float shakeDuration = 0.5f; // Duration of the shake effect
     private float shakeMagnitude; // Intensity of the shake effect
 
@@ -12,6 +13,10 @@ public class CameraShake : MonoBehaviour
 
     void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
         //original position of camera
         originalPosition = transform.localPosition;
     }
@@ -34,6 +39,11 @@ public class CameraShake : MonoBehaviour
             shakeTimer = 0f;
             transform.localPosition = originalPosition;
         }
+    }
+    public void bombCombineShake()
+    {
+        shakeTimer = 2;
+        shakeMagnitude = 10;
     }
 
     public void Shake(int catIndex)

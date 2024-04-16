@@ -14,9 +14,9 @@ public class ExplosiveCatGenerator : MonoBehaviour
     [SerializeField] private Image nextCatImage; //reference to next cat bubble image to be rendered
     [SerializeField] public GameObject[] Cats; //storage of the cat prefabs
 
-    [SerializeField] private GameObject fish;
-    [SerializeField] private Sprite fishSprite;
-    private int fishChance = 50; // chance is calculated as 1 out of fishChance
+    [SerializeField] private GameObject bomb;
+    [SerializeField] private Sprite bombSprite;
+    private int bombChance = 7; // chance is calculated as 1 out of bombChance
 
     private int highestCatSpawnIndex = 4; //change to allow spawning of higher level cats
     public GameObject currentCat; //variable to store current cat prefab
@@ -40,11 +40,11 @@ public class ExplosiveCatGenerator : MonoBehaviour
 
     private void generateRandomcat()
     {
-        int isFish = Random.Range(0, fishChance);
-        if (isFish == 1)
+        int isBomb = Random.Range(0, bombChance);
+        if (isBomb == 1)
         {
-            nextCat = fish;
-            nextCatImage.sprite = fishSprite;
+            nextCat = bomb;
+            nextCatImage.sprite = bombSprite;
         }
         else
         {

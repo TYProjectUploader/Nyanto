@@ -33,7 +33,6 @@ public class ExplosiveCombinationManager : MonoBehaviour
     private float explosionRadiusMultiplier = 1.8f;
     [SerializeField] private Material whiteMaterial; //material to swap the cat sprites out for
     [SerializeField] private GameObject explosionPrefab;
-    [SerializeField] private CameraShake cameraShakeScript;
 
     //spawn boundary variables for combined cats
     private BoxCollider2D spawnBox;
@@ -173,7 +172,7 @@ public class ExplosiveCombinationManager : MonoBehaviour
             GameObject explosionInstance = Instantiate(explosionPrefab, collisionPosition, quaternion.identity);
             float explosionmag = (cat1Index+1)*explosionAnimMagnitude;
             explosionInstance.transform.localScale = new Vector3(explosionmag, explosionmag, 1f);
-            cameraShakeScript.Shake(cat1Index);
+            CameraShake.instance.Shake(cat1Index);
             // Automatically destroy the explosion after the specified duration
             Destroy(explosionInstance, 1f);
 
