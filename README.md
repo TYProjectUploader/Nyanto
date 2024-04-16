@@ -24,6 +24,8 @@ Button click: https://pixabay.com/sound-effects/tap-notification-180637/
 
 Music: https://pixabay.com/music/cartoons-cute-creatures-150622/
 
+Explosion: https://pixabay.com/sound-effects/explosion-01-6225/
+
 **VFX:**
 
 Explosion: https://assetstore.unity.com/packages/2d/textures-materials/2d-flat-explosion-66932
