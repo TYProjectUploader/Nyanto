@@ -1,5 +1,5 @@
 # Nyanto
-Game created for SDD Major (currently only built for Windows but you may build yourself for other platforms)
+Recreation and imagination of Suika with Cats :P(currently only built for Windows but you may build yourself for other platforms)
 
 This project was created using Unity version 2022.3.0f1 by Timothy Yang. 
 
