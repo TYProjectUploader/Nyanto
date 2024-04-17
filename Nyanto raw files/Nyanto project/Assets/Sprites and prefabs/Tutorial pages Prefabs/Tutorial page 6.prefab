@@ -202,7 +202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Cats are now Bouncy! Merging cats reduces their velocity.
+  m_text: Cats are now Bouncy! Merging cats makes them more bouncy :D.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7e82f7510fc3cca42ba7af3b9859f69b, type: 2}
   m_sharedMaterial: {fileID: -8334834339662953052, guid: 7e82f7510fc3cca42ba7af3b9859f69b, type: 2}

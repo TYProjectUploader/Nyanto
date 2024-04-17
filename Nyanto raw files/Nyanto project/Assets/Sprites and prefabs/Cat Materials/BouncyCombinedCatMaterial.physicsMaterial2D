@@ -6,6 +6,6 @@ PhysicsMaterial2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cat Bouncy Material
-  friction: 0.2
-  bounciness: 0.8
+  m_Name: BouncyCombinedCatMaterial
+  friction: 0
+  bounciness: 1.05

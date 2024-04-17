@@ -2396,6 +2396,7 @@ MonoBehaviour:
   comboText: {fileID: 2114743746}
   scoreText: {fileID: 1824234090}
   whiteMaterial: {fileID: 2100000, guid: a9800bdacf8e03143a6502a38d838c10, type: 2}
+  combinedCatMaterial: {fileID: 6200000, guid: e2e9ebffc60e6d04c90c185eac9926d2, type: 2}
 --- !u!114 &851553998
 MonoBehaviour:
   m_ObjectHideFlags: 0

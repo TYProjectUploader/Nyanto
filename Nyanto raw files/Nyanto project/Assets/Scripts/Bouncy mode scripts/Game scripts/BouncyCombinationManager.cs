@@ -30,6 +30,7 @@ public class BouncyCombinationManager : MonoBehaviour
     private float repulsionForce = 3.5f; //force to push other cats in range away when spawning
     private float explosionRadiusMultiplier = 1.2f;
     [SerializeField] private Material whiteMaterial; //material to swap the cat sprites out for
+    [SerializeField] private PhysicsMaterial2D combinedCatMaterial;
 
     //spawn boundary variables for combined cats
     private BoxCollider2D spawnBox;
@@ -159,6 +160,8 @@ public class BouncyCombinationManager : MonoBehaviour
             //spawn the cat and inform the collider informer that collision occured due to cats combining
             combinedCat.GetComponent<Rigidbody2D>().position = collisionPosition;
             combinedCat.transform.position = collisionPosition;
+            //change material of spawned in cat
+            combinedCat.GetComponent<Rigidbody2D>().sharedMaterial = combinedCatMaterial;
             BouncyColliderInformer informer = combinedCat.GetComponent<BouncyColliderInformer>();
             informer.triggeredFromCatCombine = true;
 
