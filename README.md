@@ -7,9 +7,7 @@ This project was created using Unity version 2022.3.0f1 by Timothy Yang.
 1. Go to releases and click the latest version 
 2. Click to download the first file under assets named NyantoWinBuild.zip
 3. Extract files from the zip folder and click the Nyanto exe to play
-
-
-
+<br>
 ©2024 Timothy Yang
 
 You may view the licence in the file titled LICENCE
