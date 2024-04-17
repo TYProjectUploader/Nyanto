@@ -47,3 +47,6 @@ TagManager:
   - name: Explosion
     uniqueID: 359352169
     locked: 0
+  - name: UI board canvas
+    uniqueID: 409149667
+    locked: 0
