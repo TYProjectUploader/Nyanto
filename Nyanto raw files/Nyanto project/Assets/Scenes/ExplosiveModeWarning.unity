@@ -230,8 +230,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "THIS GAMEMODE CONTAINS A LOT OF SCREEN-SHAKING, MAY NOT BE SAFE FOR PEOPLE
-    SENSITIVE TO MOTION SICKNESS OR EPILEPSY. \n\nPLAYER DISCRETION IS ADVISED."
+  m_text: 'THIS GAMEMODE CONTAINS A LOT OF SCREEN-SHAKING, MAY NOT BE SAFE FOR PEOPLE
+    SENSITIVE TO MOTION SICKNESS OR EPILEPSY. Turn off screenshake in main menu settings
+    if required.
+
+
+    PLAYER DISCRETION IS ADVISED.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db087282c5cd4f047a8784c4f89d7d91, type: 2}
   m_sharedMaterial: {fileID: -8334834339662953052, guid: db087282c5cd4f047a8784c4f89d7d91, type: 2}
