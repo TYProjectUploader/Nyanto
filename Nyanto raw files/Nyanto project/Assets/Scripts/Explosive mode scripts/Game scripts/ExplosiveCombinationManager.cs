@@ -154,7 +154,7 @@ public class ExplosiveCombinationManager : MonoBehaviour
             //get width of cat to be spawned and clamp spawn position within bounds
             CompositeCollider2D combinedCatCollider = combinedCat.GetComponent<CompositeCollider2D>();
             float catWidth = (combinedCatCollider.bounds.max.x - combinedCatCollider.bounds.min.x)/2; 
-            topBound = spawnBounds.max.y - catWidth;
+            
             bottomBound = spawnBounds.min.y + catWidth;
             leftBound = spawnBounds.min.x + catWidth;
             rightBound = spawnBounds.max.x - catWidth;
