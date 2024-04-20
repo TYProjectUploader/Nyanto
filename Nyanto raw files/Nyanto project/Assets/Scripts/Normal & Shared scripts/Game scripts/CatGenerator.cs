@@ -16,9 +16,9 @@ public class CatGenerator : MonoBehaviour
 
     [SerializeField] private GameObject fish;
     [SerializeField] private Sprite fishSprite;
-    private int fishChance = 50; // chance is calculated as 1 out of fishChance
+    private int FISH_CHANCE = 50; // chance is calculated as 1 out of FISH_CHANCE
 
-    private int highestCatSpawnIndex = 4; //change to allow spawning of higher level cats
+    private int HIGHEST_CAT_SPAWN_INDEX = 4; //change to allow spawning of higher level cats
     public GameObject currentCat; //variable to store current cat prefab
     private GameObject nextCat; //variable to store next cat prefab
 
@@ -40,7 +40,7 @@ public class CatGenerator : MonoBehaviour
 
     private void GenerateRandomcat()
     {
-        int isFish = Random.Range(0, fishChance);
+        int isFish = Random.Range(0, FISH_CHANCE);
         if (isFish == 1)
         {
             //spawn a fish
@@ -50,7 +50,7 @@ public class CatGenerator : MonoBehaviour
         else
         {
             //spawn regular cat
-            int nextCatIndex = Random.Range(0, highestCatSpawnIndex);
+            int nextCatIndex = Random.Range(0, HIGHEST_CAT_SPAWN_INDEX);
             nextCat = Cats[nextCatIndex];
             nextCatImage.sprite = catImages[nextCatIndex];
         }
@@ -63,7 +63,7 @@ public class CatGenerator : MonoBehaviour
         CompositeCollider2D currentCatCollider = currentCat.GetComponent<CompositeCollider2D>();
         float catWidth = (currentCatCollider.bounds.max.x - currentCatCollider.bounds.min.x)/2; 
         PlayerMovement.instance.updateMovementBoundary(catWidth);
-        currentCat.SetActive(false); //set false for now and display when dropcooldown over
+        currentCat.SetActive(false); //Hide the newly spawned cat for now and display when dropcooldown over
         //once next cat instantiated generate the next cat
         GenerateRandomcat();
     }

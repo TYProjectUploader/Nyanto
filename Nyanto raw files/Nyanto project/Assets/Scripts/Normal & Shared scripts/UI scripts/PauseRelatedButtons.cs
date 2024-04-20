@@ -26,22 +26,24 @@ public class PauseRelatedButtons : MonoBehaviour
         Debug.Log("pause button pressed");
         if (!Paused && !GameManager.instance.gameOver)
         {
+            //change out input prompts
             menuPrompts.SetActive(true);
             inGamePrompts.SetActive(false);
 
             AudioManager.instance.PlaySFX(AudioManager.instance.SFXButtonClick);
+            //if pause screen was set to be inactive hasn't been hidden cancel it to reduce rendering load
             CancelInvoke("hidePauseScreen");
-            //if pause screen was set to be inactive but not yet cancel it to reduce rendering load
+
+            //activate pause screen
             pauseScreen.SetActive(true);
             pauseBoardUIAnimator.SetTrigger("Paused");
-            Paused = true; //disable pause button
+            Paused = true; 
             Time.timeScale = 0;
         }
         else //let player resume by pressing the pause button again. 
         {
             Resume();
         }
-
     }
     public void Resume()
     {

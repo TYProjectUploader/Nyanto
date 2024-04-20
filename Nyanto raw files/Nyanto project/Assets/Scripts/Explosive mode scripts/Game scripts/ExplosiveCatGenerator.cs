@@ -18,7 +18,7 @@ public class ExplosiveCatGenerator : MonoBehaviour
     [SerializeField] private Sprite bombSprite;
     private int bombChance = 7; // chance is calculated as 1 out of bombChance
 
-    private int highestCatSpawnIndex = 4; //change to allow spawning of higher level cats
+    private int HIGHEST_CAT_SPAWN_INDEX = 4; //change to allow spawning of higher level cats
     public GameObject currentCat; //variable to store current cat prefab
     private GameObject nextCat; //variable to store next cat prefab
 
@@ -48,7 +48,7 @@ public class ExplosiveCatGenerator : MonoBehaviour
         }
         else
         {
-            int nextCatIndex = Random.Range(0, highestCatSpawnIndex);
+            int nextCatIndex = Random.Range(0, HIGHEST_CAT_SPAWN_INDEX);
             nextCat = Cats[nextCatIndex];
             nextCatImage.sprite = catImages[nextCatIndex];
         }

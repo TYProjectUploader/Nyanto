@@ -51,5 +51,7 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Nyanto project.sln"
+    "dotnet.defaultSolution": "Nyanto project.sln",
+    "doki.background.enabled": false,
+    "doki.wallpaper.enabled": true
 }

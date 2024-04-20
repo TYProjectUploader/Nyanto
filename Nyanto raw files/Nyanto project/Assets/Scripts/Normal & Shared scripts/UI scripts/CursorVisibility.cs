@@ -8,19 +8,19 @@ public class CursorVisibility : MonoBehaviour //script to turn off visibility of
     [SerializeField] private InputActionReference cursorMovementDelta;
 
     private float inactivityCounter = 0f;
-    private float inactivityTime = 3f;
+    private float INACTIVITY_TIME = 3f;
     public bool cursorIsActive = true;
     void Update()
     {
         Vector2 cursorChange = cursorMovementDelta.action.ReadValue<Vector2>();
-        //Debug.Log(inactivityTimer);
+        //Debug.Log(INACTIVITY_TIME);
         if (cursorChange.magnitude > 0)
         {
             Cursor.visible = true;
-            inactivityCounter -= inactivityTime;
+            inactivityCounter -= INACTIVITY_TIME;
             cursorIsActive = true;
         }
-        else if (inactivityCounter >= inactivityTime)
+        else if (inactivityCounter >= INACTIVITY_TIME)
         {
             Cursor.visible = false;
             cursorIsActive = false;

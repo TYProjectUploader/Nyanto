@@ -16,9 +16,9 @@ public class BouncyCatGenerator : MonoBehaviour
 
     [SerializeField] private GameObject fish;
     [SerializeField] private Sprite fishSprite;
-    private int fishChance = 100; // chance is calculated as 1 out of fishChance
+    private int FISH_CHANCE = 100; // chance is calculated as 1 out of FISH_CHANCE
 
-    private int highestCatSpawnIndex = 4; //change to allow spawning of higher level cats
+    private int HIGHEST_CAT_SPAWN_INDEX = 4; //change to allow spawning of higher level cats
     public GameObject currentCat; //variable to store current cat prefab
     private GameObject nextCat; //variable to store next cat prefab
 
@@ -40,7 +40,7 @@ public class BouncyCatGenerator : MonoBehaviour
 
     private void generateRandomcat()
     {
-        int isFish = Random.Range(0, fishChance);
+        int isFish = Random.Range(0, FISH_CHANCE);
         if (isFish == 1)
         {
             nextCat = fish;
@@ -48,7 +48,7 @@ public class BouncyCatGenerator : MonoBehaviour
         }
         else
         {
-            int nextCatIndex = Random.Range(0, highestCatSpawnIndex);
+            int nextCatIndex = Random.Range(0, HIGHEST_CAT_SPAWN_INDEX);
             nextCat = Cats[nextCatIndex];
             nextCatImage.sprite = catImages[nextCatIndex];
         }

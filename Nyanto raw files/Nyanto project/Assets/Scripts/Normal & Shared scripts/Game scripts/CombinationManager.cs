@@ -26,8 +26,8 @@ public class CombinationManager : MonoBehaviour
     private int cat1Value;
 
     //variables for handling the combination
-    private float combineDelay = 0.06f;
-    private float repulsionForce = 2.5f; //force to push other cats in range away when spawning
+    private float COMBINE_DELAY = 0.06f;
+    private float REPULSION_FORCE = 2.5f; //force to push other cats in range away when spawning
     [SerializeField] private Material whiteMaterial; //material to swap the cat sprites out for
 
     //spawn boundary variables for combined cats
@@ -43,7 +43,7 @@ public class CombinationManager : MonoBehaviour
     //int storage for the combo no
     private int comboCount;
     //time before comboresets
-    private float comboResetTime = 1.5f;
+    private float COMBO_RESET_TIME = 1.5f;
     public int Score {get; set;}
     private int scoreToAdd;
     public bool handlingCombine {get; set;} = false;
@@ -102,7 +102,7 @@ public class CombinationManager : MonoBehaviour
             CancelInvoke("ResetCombo");
 
             // Reset combo count after a certain time
-            Invoke("ResetCombo", comboResetTime);
+            Invoke("ResetCombo", COMBO_RESET_TIME);
             //add score based on combocount
             scoreToAdd = cat1Value*comboCount;
             Score += scoreToAdd;
@@ -126,7 +126,7 @@ public class CombinationManager : MonoBehaviour
         cat1.GetComponent<SpriteRenderer>().material = whiteMaterial;
         cat2.GetComponent<SpriteRenderer>().material = whiteMaterial;
         //delay reduces load on calculations with multiple combinations and feels more smooth
-        yield return new WaitForSeconds(combineDelay);
+        yield return new WaitForSeconds(COMBINE_DELAY);
         //Destroy collided objects only occurs after rest of frame logic is done
         Destroy(cat1);
         Destroy(cat2);
@@ -170,7 +170,7 @@ public class CombinationManager : MonoBehaviour
                 if (rb != null)
                 {
                     Vector2 repulsionDirection = (rb.position - (Vector2)combinedCat.transform.position).normalized;
-                    rb.AddForce(repulsionDirection * repulsionForce, ForceMode2D.Impulse);
+                    rb.AddForce(repulsionDirection * REPULSION_FORCE, ForceMode2D.Impulse);
                 }
             }
         }

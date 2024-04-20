@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject highScoreAlert;
     [SerializeField] private Image gameScreenShot;
     public bool gameOver = false;
-    private float fadeDuration = 1.5f;
+    private float FADE_DURATION = 1.5f;
 
     void Awake()
     {
@@ -27,7 +27,8 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
-        Time.timeScale = 1; //ensure timescale is one incase game was reloaded from an end game
+        //Ensure timescale is reset if the scene is reset from the pause menu or end game screen
+        Time.timeScale = 1;
         //get Previous highscore
         highscore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
     }
@@ -60,20 +61,22 @@ public class GameManager : MonoBehaviour
         Debug.Log("fading in");
         yield return new WaitForSeconds(GameOverDetector.gameOverDelay);
         StartCoroutine(CaptureScreenshot());
+
         //wait for screenshot to finish before continuing
         yield return null;
         ActivateGameOverScreen();
         menuPrompts.SetActive(true);
         inGamePrompts.SetActive(false);
         Color panelColor = gameOverFadePanel.color;
+        
         //initially set color's alpha to 0
         panelColor.a = 0f;
         gameOverFadePanel.color = panelColor;
         float elapsedTime = 0f;
-        while (elapsedTime < fadeDuration)
+        while (elapsedTime < FADE_DURATION)
         {
             // Increase the alpha value over time
-            panelColor.a = Mathf.Lerp(0f, 0.7f, elapsedTime / fadeDuration);
+            panelColor.a = Mathf.Lerp(0f, 0.7f, elapsedTime / FADE_DURATION);
             gameOverFadePanel.color = panelColor;
             // Increment the elapsed time
             elapsedTime += Time.deltaTime;
@@ -98,7 +101,6 @@ public class GameManager : MonoBehaviour
     private IEnumerator CaptureScreenshot()
     {
         //create path for screenshot to be saved
-        //string ssPath = Application.dataPath +"/Resources/Screenshot/gameOverScreenShot.png";
         string ssPath;
         //check if done in unity editor or is final build to save the screenshot in different places
         #if UNITY_EDITOR
@@ -120,11 +122,5 @@ public class GameManager : MonoBehaviour
         Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
         //Finally load the sprite
         gameScreenShot.sprite = sprite;
-
-        /* commented out method only works in the unity editor
-        AssetDatabase.Refresh(); //<-refreshes file folder in unity editor only
-        //load the previously saved screenshot for the game over screen
-        gameScreenShot.sprite = Resources.Load<Sprite>("Screenshot/gameOverScreenShot");
-        */
     }
 }

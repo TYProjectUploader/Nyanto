@@ -58,7 +58,7 @@ public class ExplosiveGameManager : MonoBehaviour
     {
         //wait for fruit flashing to end
         Debug.Log("fading in");
-        yield return new WaitForSeconds(ExplosiveGameOverDetector.explosiveGameOverDelay);
+        yield return new WaitForSeconds(ExplosiveGameOverDetector.explosivegameOverDelay);
         StartCoroutine(CaptureScreenshot());
         //wait for screenshot to finish before continuing
         yield return null;

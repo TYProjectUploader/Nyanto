@@ -58,7 +58,7 @@ public class BouncyGameManager : MonoBehaviour
     {
         //wait for fruit flashing to end
         Debug.Log("fading in");
-        yield return new WaitForSeconds(BouncyGameOverDetector.bouncyGameOverDelay);
+        yield return new WaitForSeconds(BouncyGameOverDetector.bouncygameOverDelay);
         StartCoroutine(CaptureScreenshot());
         //wait for screenshot to finish before continuing
         yield return null;

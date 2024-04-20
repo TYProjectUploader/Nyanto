@@ -5,7 +5,7 @@ using UnityEngine;
 public class BombController : MonoBehaviour
 {
     [SerializeField] private GameObject explosionPrefab;
-    private float repulsionForce = 30000f; 
+    private float REPULSION_FORCE = 30000f; 
     private bool hasCollided = false;
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -37,7 +37,7 @@ public class BombController : MonoBehaviour
                     if (rb != null)
                     {
                         Vector2 repulsionDirection = (rb.position - (Vector2)collisionPosition).normalized;
-                        rb.AddForce(repulsionDirection * repulsionForce, ForceMode2D.Impulse);
+                        rb.AddForce(repulsionDirection * REPULSION_FORCE, ForceMode2D.Impulse);
                     }
                 }
             }

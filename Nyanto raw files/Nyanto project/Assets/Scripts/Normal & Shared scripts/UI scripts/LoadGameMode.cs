@@ -7,6 +7,7 @@ using TMPro;
 
 public class LoadGameMode : MonoBehaviour
 {
+    //script containing logic for loading a different gamemode
     public void NormalModeSelect()
     {
         ResetCurrentPage();
