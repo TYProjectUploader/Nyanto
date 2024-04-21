@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!GameManager.instance.gameOver && !PauseRelatedButtons.instance.Paused)
         {
-            updateMovement();
+            UpdateMovement();
             CatDropStatus();
         }
     }
@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    void updateMovement()
+    void UpdateMovement()
     {
         //movement logic. If mouse is being moved then only mouse input is used otherwise keyboard input is used
         Vector2 cursorChange = cursorMovementDelta.action.ReadValue<Vector2>();
@@ -95,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            //movement caused by keyboard input
+            //movement input from non-cursor devices such as keyboards
             Vector3 noncursorMovementInput = noncursorMovement.action.ReadValue<Vector2>() * Time.deltaTime * moveSpeed;
             newPosition = transform.position + noncursorMovementInput;
             //Debugging used for finding position
@@ -106,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
         newPosition.x = Mathf.Clamp(newPosition.x, leftBound, rightBound);
         transform.position = newPosition;
     }
-    public void updateMovementBoundary(float catWidth) //update movement boundary based on size of cat
+    public void UpdateMovementBoundary(float catWidth) //update movement boundary based on size of cat
     {
         leftBound = movementBounds.min.x;
         rightBound = movementBounds.max.x;

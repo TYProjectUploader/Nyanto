@@ -48,7 +48,7 @@ public class BouncyPlayerMovement : MonoBehaviour
     {
         if (!BouncyGameManager.instance.gameOver && !BouncyPauseRelatedButtons.instance.Paused)
         {
-            updateMovement();
+            UpdateMovement();
             catDropStatus();
         }
     }
@@ -64,7 +64,7 @@ public class BouncyPlayerMovement : MonoBehaviour
                 aimLine.SetActive(false); //turn off aim line while cat is dropping
                 canDrop = false;
                 coolDownOver = false;
-                BouncyCatGenerator.instance.simulateCurrentCat(); //simulate the current cat being held to make it drop
+                BouncyCatGenerator.instance.SimulateCurrentCat(); //simulate the current cat being held to make it drop
                 StartCoroutine(ResetDropCoolDown());
             }
         }
@@ -78,7 +78,7 @@ public class BouncyPlayerMovement : MonoBehaviour
     }
 
 
-    void updateMovement()
+    void UpdateMovement()
     {
         //movement logic. If mouse is being moved then only mouse input is used otherwise keyboard input is used
         Vector2 cursorChange = cursorMovementDelta.action.ReadValue<Vector2>();
@@ -95,7 +95,7 @@ public class BouncyPlayerMovement : MonoBehaviour
         }
         else
         {
-            //movement caused by keyboard input
+            //movement input from non-cursor devices such as keyboards
             Vector3 noncursorMovementInput = noncursorMovement.action.ReadValue<Vector2>() * Time.deltaTime * moveSpeed;
             newPosition = transform.position + noncursorMovementInput;
             //Debugging used for finding position
@@ -106,7 +106,7 @@ public class BouncyPlayerMovement : MonoBehaviour
         newPosition.x = Mathf.Clamp(newPosition.x, leftBound, rightBound);
         transform.position = newPosition;
     }
-    public void updateMovementBoundary(float catWidth) //update movement boundary based on size of cat
+    public void UpdateMovementBoundary(float catWidth) //update movement boundary based on size of cat
     {
         leftBound = movementBounds.min.x;
         rightBound = movementBounds.max.x;

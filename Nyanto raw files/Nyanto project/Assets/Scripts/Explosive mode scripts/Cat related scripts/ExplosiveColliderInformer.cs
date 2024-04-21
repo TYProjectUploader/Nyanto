@@ -17,7 +17,7 @@ public class ExplosiveColliderInformer : MonoBehaviour
             hasCollided = true;
             Debug.Log("readying for next spawn");
             ExplosivePlayerMovement.instance.canDrop = true; //enable spawning again
-            ExplosiveCatGenerator.instance.spawnCat(); //spawn next cat when fruit has collided
+            ExplosiveCatGenerator.instance.SpawnCat(); //spawn next cat when fruit has collided
             Destroy(this); //destroy this script as no longer needed and to improve performance
         }
         StartCoroutine(DestroyAfterDelay(3f)); //destroy the script after 5s to account for scripts being created when cats combine

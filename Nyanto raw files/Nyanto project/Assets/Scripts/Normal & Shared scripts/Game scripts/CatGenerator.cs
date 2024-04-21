@@ -33,12 +33,12 @@ public class CatGenerator : MonoBehaviour
     void Start()
     {
         //generate and spawn the first cat and next cat
-        GenerateRandomcat(); 
+        GenerateRandomCat(); 
         Debug.Log("generate first cat");
         SpawnCat();
     }
 
-    private void GenerateRandomcat()
+    private void GenerateRandomCat()
     {
         int isFish = Random.Range(0, FISH_CHANCE);
         if (isFish == 1)
@@ -62,10 +62,10 @@ public class CatGenerator : MonoBehaviour
         //get size of cat radius to update movement boundary
         CompositeCollider2D currentCatCollider = currentCat.GetComponent<CompositeCollider2D>();
         float catWidth = (currentCatCollider.bounds.max.x - currentCatCollider.bounds.min.x)/2; 
-        PlayerMovement.instance.updateMovementBoundary(catWidth);
+        PlayerMovement.instance.UpdateMovementBoundary(catWidth);
         currentCat.SetActive(false); //Hide the newly spawned cat for now and display when dropcooldown over
         //once next cat instantiated generate the next cat
-        GenerateRandomcat();
+        GenerateRandomCat();
     }
     public void SimulateCurrentCat() //simulate the cat and unparent its transform position from spawner
     {

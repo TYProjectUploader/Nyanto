@@ -33,12 +33,12 @@ public class BouncyCatGenerator : MonoBehaviour
     void Start()
     {
         //generate and spawn the first cat and next cat
-        generateRandomcat(); 
+        GenerateRandomCat(); 
         Debug.Log("generate first cat");
-        spawnCat();
+        SpawnCat();
     }
 
-    private void generateRandomcat()
+    private void GenerateRandomCat()
     {
         int isFish = Random.Range(0, FISH_CHANCE);
         if (isFish == 1)
@@ -53,19 +53,19 @@ public class BouncyCatGenerator : MonoBehaviour
             nextCatImage.sprite = catImages[nextCatIndex];
         }
     }
-    public void spawnCat()
+    public void SpawnCat()
     {
         //spawn cat at the location of an empty game object called catspanwer
         currentCat = Instantiate(nextCat, spawnerPosition.transform);
         //get size of cat radius to update movement boundary
         CompositeCollider2D currentCatCollider = currentCat.GetComponent<CompositeCollider2D>();
         float catWidth = (currentCatCollider.bounds.max.x - currentCatCollider.bounds.min.x)/2; 
-        BouncyPlayerMovement.instance.updateMovementBoundary(catWidth);
+        BouncyPlayerMovement.instance.UpdateMovementBoundary(catWidth);
         currentCat.SetActive(false); //set false for now and display when dropcooldown over
         //once next cat instantiated generate the next cat
-        generateRandomcat();
+        GenerateRandomCat();
     }
-    public void simulateCurrentCat() //simulate the cat and unparent its transform position from spawner
+    public void SimulateCurrentCat() //simulate the cat and unparent its transform position from spawner
     {
         Debug.Log("simulating Current Cat");
         currentCat.GetComponent<Rigidbody2D>().simulated = true;

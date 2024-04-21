@@ -33,12 +33,12 @@ public class ExplosiveCatGenerator : MonoBehaviour
     void Start()
     {
         //generate and spawn the first cat and next cat
-        generateRandomcat(); 
+        GenerateRandomCat(); 
         Debug.Log("generate first cat");
-        spawnCat();
+        SpawnCat();
     }
 
-    private void generateRandomcat()
+    private void GenerateRandomCat()
     {
         int isBomb = Random.Range(0, bombChance);
         if (isBomb == 1)
@@ -53,19 +53,19 @@ public class ExplosiveCatGenerator : MonoBehaviour
             nextCatImage.sprite = catImages[nextCatIndex];
         }
     }
-    public void spawnCat()
+    public void SpawnCat()
     {
         //spawn cat at the location of an empty game object called catspanwer
         currentCat = Instantiate(nextCat, spawnerPosition.transform);
         //get size of cat radius to update movement boundary
         CompositeCollider2D currentCatCollider = currentCat.GetComponent<CompositeCollider2D>();
         float catWidth = (currentCatCollider.bounds.max.x - currentCatCollider.bounds.min.x)/2; 
-        ExplosivePlayerMovement.instance.updateMovementBoundary(catWidth);
+        ExplosivePlayerMovement.instance.UpdateMovementBoundary(catWidth);
         currentCat.SetActive(false); //set false for now and display when dropcooldown over
         //once next cat instantiated generate the next cat
-        generateRandomcat();
+        GenerateRandomCat();
     }
-    public void simulateCurrentCat() //simulate the cat and unparent its transform position from spawner
+    public void SimulateCurrentCat() //simulate the cat and unparent its transform position from spawner
     {
         Debug.Log("simulating Current Cat");
         currentCat.GetComponent<Rigidbody2D>().simulated = true;
