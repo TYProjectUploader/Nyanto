@@ -8,19 +8,32 @@ public class ScreenshakeCheckBox : MonoBehaviour
     //logic for toggle
     public Toggle screenShakeToggle;
     //set toggle based on preset values
-    void Awake()
+    void Start()
     {
-        if (PlayerPrefs.GetInt("Screenshake", 1) == 1)
+        //set screenshake to be on by default
+        if (PlayerPrefs.HasKey("Screenshake"))
         {
-            screenShakeToggle.isOn = true;
+
+            //when launching game determine previous saved setting
+            if (PlayerPrefs.GetInt("Screenshake") == 1)
+            {
+                Debug.Log("saved 1 as screenshake");
+                screenShakeToggle.isOn = true;
+            }
+            else
+            {
+                // Set the checkbox to unchecked
+                Debug.Log("saved 0 as screenshake");
+                screenShakeToggle.isOn = false;
+            }
         }
         else
         {
-            // Set the checkbox to unchecked
-            screenShakeToggle.isOn = false;
+            PlayerPrefs.SetInt("Screenshake", 1);
+            screenShakeToggle.isOn = true;
         }
     }
-    public void updateScreenshakePrefs()
+    public void UpdateScreenshakePrefs()
     {
         if (screenShakeToggle.isOn)
         {
@@ -29,6 +42,7 @@ public class ScreenshakeCheckBox : MonoBehaviour
         else
         {
             PlayerPrefs.SetInt("Screenshake", 0);
+            Debug.Log("set to 0");
         }
     }
 }

@@ -330,7 +330,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 42.999996, y: 0}
-  m_SizeDelta: {x: 412.89, y: 50}
+  m_SizeDelta: {x: 420, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &407019387
 Animator:
@@ -476,12 +476,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Also....
-
-    The lower your PC specs, the more likely things break in
-    this game mode coz unity :P
-
-    P.s. don''t worry bout the bombs....'
+  m_text: "Also....\nThe lower your PC specs, the more likely things break in this
+    game mode coz unity :P\n\nP.s. don't worry \nbout the bombs...."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db087282c5cd4f047a8784c4f89d7d91, type: 2}
   m_sharedMaterial: {fileID: -8334834339662953052, guid: db087282c5cd4f047a8784c4f89d7d91, type: 2}
@@ -544,7 +540,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -127.33109, y: 0, z: -221.75333, w: 0}
+  m_margin: {x: -127.33109, y: 0, z: -110.08655, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -575,8 +571,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -39, y: 1}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 43, y: 0}
+  m_SizeDelta: {x: 420, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1128986234
 Animator:
@@ -832,6 +828,7 @@ GameObject:
   - component: {fileID: 1603217315}
   - component: {fileID: 1603217314}
   - component: {fileID: 1603217318}
+  - component: {fileID: 1603217319}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -950,6 +947,18 @@ PlayableDirector:
     value: {fileID: 1413603930}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &1603217319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603217313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a20b7981c62983a4ca5ac0e054f081af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1669896027
 GameObject:
   m_ObjectHideFlags: 0

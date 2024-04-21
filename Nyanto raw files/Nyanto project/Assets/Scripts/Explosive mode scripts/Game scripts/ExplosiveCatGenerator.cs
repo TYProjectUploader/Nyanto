@@ -61,7 +61,7 @@ public class ExplosiveCatGenerator : MonoBehaviour
         CompositeCollider2D currentCatCollider = currentCat.GetComponent<CompositeCollider2D>();
         float catWidth = (currentCatCollider.bounds.max.x - currentCatCollider.bounds.min.x)/2; 
         ExplosivePlayerMovement.instance.UpdateMovementBoundary(catWidth);
-        currentCat.SetActive(false); //set false for now and display when dropcooldown over
+        currentCat.SetActive(false); //set false for now and display when DROP_COOL_DOWN over
         //once next cat instantiated generate the next cat
         GenerateRandomCat();
     }

@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 newPosition; 
     public bool canDrop = true;
     private bool coolDownOver = true;
-    private float dropCoolDown = 0.9f;
+    private float DROP_COOL_DOWN = 0.9f;
 
     void Awake()
     {
@@ -49,10 +49,10 @@ public class PlayerMovement : MonoBehaviour
         if (!GameManager.instance.gameOver && !PauseRelatedButtons.instance.Paused)
         {
             UpdateMovement();
-            CatDropStatus();
+            CheckDropAbility();
         }
     }
-    void CatDropStatus() //check if player dropped cat and can drop cat (determined by collderinformer when cat has made first contact)
+    void CheckDropAbility() //check if player dropped cat and can drop cat (determined by collderinformer when cat has made first contact)
     {
         if (canDrop && coolDownOver)
         {
@@ -70,10 +70,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    //seperate dropcooldown so there is a minimum when near the top but otherwise cooldown based on when current dropped cat collides with something
+    //seperate DROP_COOL_DOWN so there is a minimum when near the top but otherwise cooldown based on when current dropped cat collides with something
     IEnumerator ResetDropCoolDown()
     {
-        yield return new WaitForSeconds(dropCoolDown);
+        yield return new WaitForSeconds(DROP_COOL_DOWN);
         coolDownOver = true;
     }
 

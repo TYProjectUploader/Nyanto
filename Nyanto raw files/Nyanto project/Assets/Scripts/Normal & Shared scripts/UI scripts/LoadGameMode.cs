@@ -21,13 +21,15 @@ public class LoadGameMode : MonoBehaviour
     public void ExplosiveModeSelect()
     {
         ResetCurrentPage();
-        if(PlayerPrefs.GetInt("WarningGiven",0) == 0)
+        //only give warning if not already given and if screenshake is turned on    
+        if(PlayerPrefs.GetInt("WarningGiven",0) == 0 && PlayerPrefs.GetInt("Screenshake") == 1)
         {
             //set warninggiven as true using 1 as a placeholder for true boolean, reset when game is closed.
             PlayerPrefs.SetInt("WarningGiven",1); 
             SceneManager.LoadScene("ExplosiveModeWarning");
         }
-        else{ //skip warning if already played before
+        else
+        { //skip warning if already played before
             SceneManager.LoadScene("ExplosiveMode");
         }
     }

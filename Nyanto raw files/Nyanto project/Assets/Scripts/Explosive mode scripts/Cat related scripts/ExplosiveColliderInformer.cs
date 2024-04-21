@@ -7,7 +7,7 @@ public class ExplosiveColliderInformer : MonoBehaviour
     private bool hasCollided = false;
     public bool triggeredFromCatCombine { get; set; } = false;//check if collision triggered by cats combining (logic in catcombiner)
     //public getter but private setter also defaults to false
-    //private float dropCooldown = 0.5f;
+    //private float DROP_COOL_DOWN = 0.5f;
 
     void OnCollisionEnter2D(Collision2D collision)
     {

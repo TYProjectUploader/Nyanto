@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     public bool gameOver = false;
     private float FADE_DURATION = 1.5f;
 
-    void Awake()
+    void Start()
     {
         if (instance == null)
         {
