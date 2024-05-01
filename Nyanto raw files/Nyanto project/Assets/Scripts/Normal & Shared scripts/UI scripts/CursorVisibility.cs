@@ -13,11 +13,11 @@ public class CursorVisibility : MonoBehaviour //script to turn off visibility of
     void Update()
     {
         Vector2 cursorChange = cursorMovementDelta.action.ReadValue<Vector2>();
-        //Debug.Log(INACTIVITY_TIME);
+        //Debug.Log(inactivityCounter);
         if (cursorChange.magnitude > 0)
         {
             Cursor.visible = true;
-            inactivityCounter -= INACTIVITY_TIME;
+            inactivityCounter = 0;
             cursorIsActive = true;
         }
         else if (inactivityCounter >= INACTIVITY_TIME)

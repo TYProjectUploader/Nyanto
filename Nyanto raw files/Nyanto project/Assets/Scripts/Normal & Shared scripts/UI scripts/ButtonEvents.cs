@@ -32,7 +32,7 @@ public class ButtonEvents : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public void OnSelect(BaseEventData eventData)
     {
         // Activate the outline when the button is selected
-        outline.enabled = true;
+        StartCoroutine(EnableOutline());
     }
 
     public void OnDeselect(BaseEventData eventData)
@@ -40,5 +40,13 @@ public class ButtonEvents : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         // Deactivate the outline when the button is deselected
         outline.enabled = false;
     }
+
+     private IEnumerator EnableOutline()
+     {
+        yield return new WaitForEndOfFrame(); 
+        //force unity to wait to end of frame to preven on pointer exit from being processed first]
+        //this is an issue with outline not correctly displaying when switching between the two.
+        outline.enabled = true;
+     }
 }
 
