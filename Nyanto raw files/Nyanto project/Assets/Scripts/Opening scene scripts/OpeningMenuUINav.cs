@@ -53,14 +53,12 @@ public class OpeningMenuUINav : MonoBehaviour //opening ui nav with keyboard.
             EventSystem.current.SetSelectedGameObject(null);
             defaultSelected = false;
             usingCursor = true;
-            Debug.Log("moved cursor");
 
         }
         //select default if switching back to keyboard navigation
         else if (Navigation.action.WasPressedThisFrame())
         {
             usingCursor = false;
-            
             //move mouse to not interfere with keyboard navigation
             Mouse.current.WarpCursorPosition(Camera.main.ViewportToScreenPoint(new Vector2(0.85f, 0.5f)));
             if (!defaultSelected)
