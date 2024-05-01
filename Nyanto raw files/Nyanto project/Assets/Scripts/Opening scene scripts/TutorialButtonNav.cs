@@ -47,6 +47,7 @@ public class TutorialButtonNav : MonoBehaviour
         if (currentPage == tutePages.Length-1) //if at end of page set right button inactive
         {
             rightButton.SetActive(false);
+            rightButton.GetComponent<Outline>().enabled=false;
         }
         else
         {
@@ -55,6 +56,7 @@ public class TutorialButtonNav : MonoBehaviour
         if (currentPage == 0)
         {
             leftButton.SetActive(false);
+            leftButton.GetComponent<Outline>().enabled=false;
         }
         else
         {
