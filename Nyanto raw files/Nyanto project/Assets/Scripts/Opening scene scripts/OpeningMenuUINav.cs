@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class OpeningMenuUINav : MonoBehaviour //opening ui nav with keyboard.
 {
@@ -30,6 +31,7 @@ public class OpeningMenuUINav : MonoBehaviour //opening ui nav with keyboard.
 
     private bool defaultSelected = false;
     public bool usingCursor = true;
+    
 
     // Update is called once per frame
     void Update()
@@ -99,16 +101,21 @@ public class OpeningMenuUINav : MonoBehaviour //opening ui nav with keyboard.
                     {
                         if (tuteButNav.lastButtonWasRight) //if right tutorial button is active and last button pressed was right then default to right button
                         {
+                            rightTutorialButton.GetComponent<Outline>().enabled = true;
+                            Debug.Log("ay");
                             EventSystem.current.SetSelectedGameObject(rightTutorialButton);
                             break;
                         }
                         //if using left button but ended on first page then set selected as right
                         if (!tuteButNav.lastButtonWasRight && leftTutorialButton.activeSelf)
                         {
+                            leftTutorialButton.GetComponent<Outline>().enabled = true;
                             EventSystem.current.SetSelectedGameObject(leftTutorialButton);
                         }
                         else
                         {
+                            Debug.Log("ya");
+                            rightTutorialButton.GetComponent<Outline>().enabled = true;
                             EventSystem.current.SetSelectedGameObject(rightTutorialButton);
                         }
                     }

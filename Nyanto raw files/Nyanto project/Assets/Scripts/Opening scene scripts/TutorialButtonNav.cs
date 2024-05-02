@@ -16,6 +16,8 @@ public class TutorialButtonNav : MonoBehaviour
     [Header("---Buttons---")]
     [SerializeField] private GameObject leftButton;
     [SerializeField] private GameObject rightButton;
+    [SerializeField] private TutorialButtonBehaviour leftButtonBehaviour;
+    [SerializeField] private TutorialButtonBehaviour rightButtonBehaviour;
 
     private int currentPage = 0;
     public bool lastButtonWasRight;
@@ -31,6 +33,7 @@ public class TutorialButtonNav : MonoBehaviour
     {
         AudioManager.instance.PlaySFX(AudioManager.instance.SFXButtonClick);
         currentPage ++;
+        Debug.Log(currentPage);
         lastButtonWasRight = true;
         UpdatePage();
     }
@@ -39,6 +42,7 @@ public class TutorialButtonNav : MonoBehaviour
     {
         AudioManager.instance.PlaySFX(AudioManager.instance.SFXButtonClick);
         currentPage --;
+        Debug.Log(currentPage);
         lastButtonWasRight = false;
         UpdatePage();
     }
@@ -48,6 +52,7 @@ public class TutorialButtonNav : MonoBehaviour
         {
             rightButton.SetActive(false);
             rightButton.GetComponent<Outline>().enabled=false;
+            rightButton.GetComponent<TutorialButtonBehaviour>().isHovered = false;
         }
         else
         {
@@ -57,6 +62,7 @@ public class TutorialButtonNav : MonoBehaviour
         {
             leftButton.SetActive(false);
             leftButton.GetComponent<Outline>().enabled=false;
+            leftButton.GetComponent<TutorialButtonBehaviour>().isHovered = false;
         }
         else
         {
