@@ -46,13 +46,13 @@ public class ExplosiveUINavigationInGame : MonoBehaviour
             {
                 EventSystem.current.SetSelectedGameObject(pauseDefault);
                 //move cursor out of way of buttons if using keyboard input tested this and doesn't affect user experience at all as navigation would be done with one or other
-                Mouse.current.WarpCursorPosition(Camera.main.ViewportToScreenPoint(new Vector2(0.7f, 0.5f)));
+                Mouse.current.WarpCursorPosition(Camera.main.ViewportToScreenPoint(new Vector2(0.85f, 0.5f)));
                 return;
             }
             if (ExplosiveGameManager.instance.gameOver)
             {
                 EventSystem.current.SetSelectedGameObject(gameOverDefault);
-                Mouse.current.WarpCursorPosition(Camera.main.ViewportToScreenPoint(new Vector2(0.75f, 0.5f)));
+                Mouse.current.WarpCursorPosition(Camera.main.ViewportToScreenPoint(new Vector2(0.85f, 0.5f)));
                 return;
             } 
         } 

@@ -60,8 +60,8 @@ public class ButtonEvents : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
      private IEnumerator EnableOutline()
      {
         yield return new WaitForEndOfFrame(); 
-        //force unity to wait to end of frame to preven on pointer exit from being processed first]
-        //this is an issue with outline not correctly displaying when switching between the two.
+        //force unity to wait to end of frame to prevent on pointer exit from being processed first]
+        //this is an issue with outline not correctly displaying when switching between the two input types.
         outline.enabled = true;
      }
 }
