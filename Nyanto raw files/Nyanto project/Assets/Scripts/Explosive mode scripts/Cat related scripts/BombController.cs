@@ -31,7 +31,7 @@ public class BombController : MonoBehaviour
                 Collider2D[] colliders = Physics2D.OverlapCircleAll(collisionPosition, 5);
                 foreach (Collider2D collider in colliders)
                 {
-                    Debug.Log("ayaya");
+                    Debug.Log("KABOOM");
                     //Debug.Log("pushing away others in range of spawn");
                     Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
                     if (rb != null)
