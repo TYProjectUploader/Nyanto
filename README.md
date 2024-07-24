@@ -8,10 +8,15 @@ Documentation produced for this coursework can be found here: https://docs.googl
 1. Go to releases and click the latest version 
 2. Click to download the first file under assets named NyantoWinBuild.zip
 3. Extract files from the zip folder and click the Nyanto exe to play
-<br>
-©2024 Timothy Yang
+
+
+**Watermelon achievers:**
+1. The_Angry_Kat
+2. 3Delusion
+3. TitanPlayz
 
 You may view the licence in the file titled LICENCE
+©2024 Timothy Yang
 
 Assets that are not mine can be downloaded from below everything else was made myself:
 
