@@ -4,6 +4,11 @@ Recreation and imagination of Suika with Cats :P(currently only built for Window
 This project was created using Unity version 2022.3.0f1 by Timothy Yang for the SDD Major Project. 
 Documentation produced for this coursework can be found here: https://docs.google.com/document/d/1K29GKjP_fPkjo3TNLscw2SwvPLNIsad0PoxHz_grtsQ/edit?usp=sharing
 
+**Watermelon achievers:**
+1. The_Angry_Kat
+2. 3Delusion
+3. TitanPlayz
+
 **How to just play the game:**
 1. Go to releases and click the latest version 
 2. Click to download the first file under assets named NyantoWinBuild.zip
